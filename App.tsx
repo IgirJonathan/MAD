@@ -1,118 +1,131 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
   Text,
-  useColorScheme,
   View,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={Styles.wrapper}>
+      <View style={Styles.container}>
+        <Text style={Styles.subTitle}>demi apa?</Text>
+        <Text style={Styles.title}>demikian</Text>
+      </View>
+      <ScrollView contentContainerStyle={Styles.scrollViewContent}>
+        <TextInput
+          style={Styles.input}
+          placeholder="enter your email"></TextInput>
+
+        <TouchableOpacity style={Styles.button}>
+          <text style={Styles.buttonText}>Submit</text>
+        </TouchableOpacity>
+
+        <Image
+          style={Styles.img1}
+          source={require('./Assets/efe284b8d7cac1a05cc05a707a25719f.jpg')}
+        />
+        <Text style={Styles.title2}>berotak aru</Text>
+
+        <Image
+          style={Styles.img2}
+          source={require('./Assets/IMG_20250203_030446.jpg')}
+        />
+        <Text style={Styles.title3}>Womenji</Text>
+
+        <Image
+          style={Styles.img3}
+          source={{
+            uri: 'https://tse1.mm.bing.net/th?id=OIP.el0tBX9OwxJrowNp8EA_TgHaIl&pid=Api&P=0&h=180',
+          }}
+        />
+        <Text style={Styles.title3}>Siap</Text>
+      </ScrollView>
     </View>
   );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;
+
+const Styles = StyleSheet.create({
+  scrollViewContent: {},
+  wrapper: {
+    alignItems: 'center',
+    paddingTop: 50,
+    paddingBottom: 20, // Add some padding at the bottom
+  },
+  container: {
+    backgroundColor: 'cyan',
+    borderColor: 'black',
+    borderWidth: 5,
+    borderRadius: 15,
+    padding: 20,
+    width: '90%',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 20,
+    color: 'black',
+    textAlign: 'center',
+  },
+  title2: {
+    fontSize: 20,
+    color: 'black',
+    textAlign: 'center',
+    marginTop: 30,
+  },
+  title3: {
+    fontSize: 20,
+    color: 'black',
+    textAlign: 'center',
+    marginTop: 30,
+  },
+  subTitle: {
+    fontSize: 20,
+    color: 'black',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  img1: {
+    marginTop: 80,
+    width: 300,
+    height: 300,
+  }, // Added closing curly brace here
+  img2: {
+    marginTop: 80,
+    width: 300,
+    height: 300,
+  },
+
+  img3: {
+    marginTop: 80,
+    width: 300,
+    height: 300,
+  },
+  input: {
+    borderWidth: 5,
+    borderColor: 'black',
+    margin: 20,
+    padding: 20,
+    fontSize: 25,
+    borderRadius: 15,
+  },
+  button: {
+    backgroundColor: 'Blue',
+    margin: 20,
+    padding: 20,
+    borderRadius: 15,
+  },
+
+  buttonText: {
+    backgroundColor: 'Blue',
+    margin: 20,
+    padding: 20,
+    borderRadius: 15,
+  },
+});
