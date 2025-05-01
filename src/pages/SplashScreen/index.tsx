@@ -1,27 +1,34 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import {Logo} from '../../assets';
+import {StyleSheet, Text, View, Image} from 'react-native';
+import React, {useEffect} from 'react';
+import { Logo } from '../../assets';
 
-const SplashScreen = () => {
+const SplashScreen = ( ) => {
   return (
-    <View style={styles.container}>
-      <Logo />
-      <Text style={styles.title}>Money Tracker</Text>
+    <View>
+      <Text>Loading...</Text>
     </View>
   );
 };
+
 
 export default SplashScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#02CF8E',
+    backgroundColor: '#F0F8FF', // Light blue background like in the image
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  Logo: {
+    width: 140,
+    height: 140,
+  },
   title: {
     fontFamily: 'Poppins-Medium',
-    fontSize: 32,
+    fontSize: 24,
+    color: '#5DA7DB', // Blue color matching the logo
+    marginTop: 10,
+    letterSpacing: 1,
   },
 });
